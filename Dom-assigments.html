@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Explorer</title>
+  <style>
+    body { font-family: Arial; background: #f8f8f8; padding: 20px; }
+    .highlight { background-color: yellow; }
+    table { border-collapse: collapse; width: 60%; margin-top: 20px; }
+    td, th { border: 1px solid #555; padding: 10px; }
+  </style>
+</head>
+<body>
+  <h1 id="pageTitle">My DOM Explorer</h1>
+
+  <div id="container">
+    <p class="intro">Welcome to the DOM Practice!</p>
+    <ul id="itemList">
+      <li class="item">Apples</li>
+      <li class="item">Bananas</li>
+      <li class="item">Cherries</li>
+    </ul>
+  </div>
+  <script>
+  	//Use document.getElementById() to select:
+    //1. <h1> element and log its text
+
+    let pageTitle = document.getElementById('pageTitle');
+    console.log(pageTitle.textContent);
+  </script>
+
+  <script>
+  	//2. <ul> element with id="itemList"
+  	let itemList = document.getElementById('itemList');
+  	console.log(itemList);
+  </script>
+
+  <script>
+  	//Use document.querySelector() to select 
+  	//1. the first <li> and log it
+  	let item = document.querySelector('.item');
+  	console.log(item);
+  </script>
+
+  <script>
+	//Use document.querySelectorAll() to select all
+	//1. <li> items and loop through them to log their text content
+	let item = document.querySelectorAll('.item');
+	for (let i = 0; i < item.length; i++) {
+		console.log(item[i].textContent);
+	}
+</script>
+
+<script>
+  //Use .firstChild and .lastChild on the body and log them.
+  for(let i = 0; i < document.body.childNodes.firstChild.lastChild; i++) {
+    console.log(document.body.firstChild);
+    console.log(document.body.lastChild);
+  }
+</script>
+</body>
+</html>
