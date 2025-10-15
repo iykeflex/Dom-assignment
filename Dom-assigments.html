@@ -45,25 +45,26 @@
   <script>
   	//Use document.querySelector() to select 
   	//1. the first <li> and log it
-  	let item = document.querySelector('.item');
+  	let item = document.querySelector('li');
   	console.log(item);
   </script>
 
   <script>
 	//Use document.querySelectorAll() to select all
 	//1. <li> items and loop through them to log their text content
-	let item = document.querySelectorAll('.item');
-	for (let i = 0; i < item.length; i++) {
-		console.log(item[i].textContent);
-	}
+	// let item = document.querySelectorAll('.item');
+	// for (let i = 0; i < item.length; i++) {
+	// 	console.log(item[i].textContent);
+	// }
+  for(let node of document.querySelectorAll('.item')) {
+  console.log(node.textContent);
+  }
 </script>
 
 <script>
   //Use .firstChild and .lastChild on the body and log them.
-  for(let i = 0; i < document.body.childNodes.firstChild.lastChild; i++) {
     console.log(document.body.firstChild);
     console.log(document.body.lastChild);
-  }
 </script>
 </body>
 </html>
