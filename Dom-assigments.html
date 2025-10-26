@@ -56,15 +56,39 @@
 	// for (let i = 0; i < item.length; i++) {
 	// 	console.log(item[i].textContent);
 	// }
-  for(let node of document.querySelectorAll('.item')) {
-  console.log(node.textContent);
+  // for(let node of document.querySelectorAll('.item')) {
+  // console.log(node.textContent);
+  // }
+
+  let items = document.querySelectorAll('.items');
+  for(let node of items) {
+    console.log(node.tex)
   }
 </script>
 
 <script>
   //Use .firstChild and .lastChild on the body and log them.
-    console.log(document.body.firstChild);
-    console.log(document.body.lastChild);
+    console.log(document.body.nextElementSibling );
+    // console.log(document.body.parentElement);
+</script>
+
+<script>
+  //Select one of the <li> elements.
+//Use .matches('.item') to check if it belongs to the .item class.
+let elem = document.querySelector('li') 
+
+  if (elem.matches('.item')) {
+    alert('Atony is a goat');
+  }
+</script>
+
+<script>
+ // closest('#container') to find its nearest ancestor with that ID
+
+  let container = document.querySelector('.item');
+  let nearestAncestor = container.closest('#container');
+console.log(nearestAncestor);
 </script>
 </body>
+<!-- comments -->
 </html>
