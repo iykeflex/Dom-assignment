@@ -27,7 +27,16 @@
       <li class="item">Bananas</li>
       <li class="item">Cherries</li>
     </ul>
+
+    <table id="dataTable">
+      <tr><th>Name</th><th>Age</th></tr>
+      <tr><td>John</td><td>25</td></tr>
+      <tr><td>Mary</td><td>30</td></tr>
+    </table>
   </div>
+
+  <script src="script.js"></script>
+  
   <script>
   	//Use document.getElementById() to select:
     //1. <h1> element and log its text
@@ -80,14 +89,64 @@ let elem = document.querySelector('li')
   if (elem.matches('.item')) {
     alert('Atony is a goat');
   }
+
+ // closest('#container') to find its nearest ancestor with that ID
+
+  let nearestAncestor = elem.closest('#container');
+console.log(nearestAncestor);
+
+</script>
+
+<!-- <script>
+ // closest('#container') to find its nearest ancestor with that ID
+
+  let lisElement = document.querySelector('.item');
+  let nearestAncestor = lisElement.closest('#container');
+console.log(nearestAncestor);
+</script> -->
+
+<script>
+  // //Use getElementsByClassName('item') to create a live collection
+
+  // let live_collection = document.getElementsByClassName('item')
+  // //Add a new <li> dynamically:
+  // li = document.createElement('li');
+  // console.log(live_collection);
+  //console.log('live_collection:',document.getElementsByClassName('item').length);
+
+  // li.textContent = 'orange';
+  // li.className = 'item';
+
+  // document.getElementById('itemList').appendChild(li);
+  // console.log(live_collection);
+  //console.log('live_collection:',document.getElementsByClassName('item').length);
+
+  //static_collection
+  let static_collection = document.querySelectorAll('.item');
+  //Add new li
+  li = document.createElement('li');
+  console.log(static_collection);
+  console.log('static_collection length:' ,document.querySelectorAll('.item').length);
+
+  li.textContent ='orange';
+  li.className = 'item';
+
+  document.getElementById('itemList').appendChild(li);
+  console.log(static_collection);
+  console.log('static_collection length:' ,document.querySelectorAll('.item').length);
 </script>
 
 <script>
- // closest('#container') to find its nearest ancestor with that ID
+  // Select the table
+  let table = document.querySelector('table');
+  //acess the row and log them
 
-  let container = document.querySelector('.item');
-  let nearestAncestor = container.closest('#container');
-console.log(nearestAncestor);
+  let rows = table.rows
+  for(let i = 0; i < rows.length; i++ ){
+    console.log(rows[i].innerText);
+  }
+  //highlight header row;
+  rows[1].classList.add('highlight')
 </script>
 </body>
 <!-- comments -->
